@@ -55,6 +55,7 @@ export default function Login() {
     const config = {
       method: "POST",
       credentials: "include",
+      withCredentials: true,
       headers: {
         "Content-Type": "application/json",
       },
