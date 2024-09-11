@@ -1,0 +1,15 @@
+.register-section h2{
+   text-align: center;
+   color: var(--darkBlue);
+}
+.button-container{
+    display: flex;
+    align-items: center;
+    gap:20px
+}
+.signupForm{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}

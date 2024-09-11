@@ -1,0 +1,95 @@
+
+ .login-box {
+    margin-left: 20px;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+}
+
+.icon {
+    font-size: 36px;
+    margin-bottom: 20px;
+    width: 60px;
+    height: 70px;
+}
+
+.login-box h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+
+.login-box p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+.input-group
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #777;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #0066cc;
+    font-size: 14px;
+}
+
+.login-box button[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.login-box button[type="submit"]:hover {
+    background-color: #444;
+}
+
+.alternative-signin {
+    margin-top: 20px;
+}
+
+.alternative-signin button {
+    padding-inline: 2px;
+    cursor: pointer;
+  background-color: transparent;
+  border: none;
+    color: #777;
+    font-size: 14px;
+}

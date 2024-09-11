@@ -1,0 +1,111 @@
+.main-feed {
+    flex: 1;
+    margin: 0 20px;
+    background-color: var(--darkblack);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.user-list{
+    margin-top: 0.6rem;
+}
+
+.user-list .user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.user-info {
+    flex: 1;
+}
+.user-info-post{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 1rem;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.handle {
+    color: #888;
+}
+.post-content-title{
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+.post-content-body{
+    margin-top: 0.4rem;
+    font-size: 1.2rem;
+}
+.follow-btn {
+    background-color: #007bff;
+    color:var(--white);
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.post-myBlog {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--lightBlack);
+    border-radius: 10px;
+}
+
+.post-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.my-post-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.my-post-actions button {
+    background: none;
+    border: none;
+    color: #63c3e9;
+    cursor: pointer;
+}
+.load-data-btn{
+    background-color: var(--lightBlack);
+    border: none;
+    border-radius: 10px;
+    color: var(--lightGrey);
+    padding: 10px 20px;
+    margin-top: 1rem;
+    margin-left: 43%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.my-post-button{
+    background-color: var(--lightBlack);
+    border: none;
+    border-radius: 10px;
+    color: var(--blue);
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
