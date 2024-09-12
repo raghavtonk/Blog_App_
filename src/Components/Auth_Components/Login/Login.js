@@ -30,7 +30,7 @@ export default function Login() {
   }
 
   function handleShowPassword() {
-    console.log("show");
+    
     if (passwordState.passwordType === "password") {
       setPasswordState({
         passwordIcon: <VisibilityIcon />,
@@ -75,8 +75,8 @@ export default function Login() {
         };
         dispatch(usersDataActions.changeLoginStatus("login"));
         dispatch(usersDataActions.inputUsersData(dataOjt));
-        Cookies.set('isUserLogin',true);
-        Cookies.set('userData', JSON.stringify(dataOjt));
+        Cookies.set('isUserLogin',true,{ expires: 1 });
+        Cookies.set('userData', JSON.stringify(dataOjt),{ expires: 1 });
         dispatch(blogsDataAction.resetBlogData());
         handleCloseModal();
         formdataRef.reset();

@@ -22,7 +22,7 @@ export default function BlogComponent() {
             config:Getconfig
         });
        
-        console.log(resData)
+       
         if (resData.status === 200) {
           dispatch(blogsDataAction.addAllBlogs(resData.data));
         }

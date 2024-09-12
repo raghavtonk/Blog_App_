@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import followUserState from "../../Funtions/followUserState";
 
 export default function Profile() {
+  
   const { isLogin, loginUserData } = useSelector((state) => state.usersData);
   const [totalFollowerSum, setTotalFollowerSum] = useState(0);
   const [totalFollowingSum, setTotalFollowingSum] = useState(0);
@@ -19,8 +20,8 @@ export default function Profile() {
           credentials: "include",
         },
       });
-      if (totalFollowingData) {
-        setTotalFollowingSum(totalFollowingData.data[0].totalFollowings);
+      if (totalFollowingData.data) {
+        setTotalFollowingSum(totalFollowingData?.data[0].totalFollowings);
       }
       const totalFollowerData = await followUserState({
         url: "https://blog-app-backend-huph.onrender.com/follow/follower-sum",
@@ -30,8 +31,8 @@ export default function Profile() {
         },
       });
 
-      if (totalFollowerData) {
-        setTotalFollowerSum(totalFollowerData.data[0].totalFollower);
+      if (totalFollowerData.data.length !== 0) {
+        setTotalFollowerSum(totalFollowerData?.data[0].totalFollower);
       }
     }
 

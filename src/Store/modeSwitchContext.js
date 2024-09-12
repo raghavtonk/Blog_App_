@@ -9,7 +9,6 @@ export function ModeSwitchContextProvider({ children }) {
   const [darkMode, setDarkMode] = useState(false);
   const handletoggleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode);
-    console.log("mode change btn clicked");
   };
   useEffect(() => {
     const root = document.documentElement;

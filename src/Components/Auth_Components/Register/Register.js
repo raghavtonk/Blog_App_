@@ -22,7 +22,6 @@ export default function Register() {
       userProgressCtx.showSignModal("signIn");
   }
   function handleShowPassword() {
-    console.log("show");
     if (passwordState.passwordType === "password") {
       setPasswordState({
         passwordIcon: <VisibilityIcon />,
@@ -45,7 +44,6 @@ export default function Register() {
       email: fd.get("email"),
       password: fd.get("password"),
     };
-    console.log("dataobj", data);
     const config = {
       method: "POST",
       credentials: "include",

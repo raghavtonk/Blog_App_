@@ -28,7 +28,6 @@ export default function CreatePost() {
             title: fd.get('blogTitle'),
             textBody: fd.get('blogBody'),
         }
-        console.log('blog data',data)
         const config ={
             method: "POST",
             headers:{
