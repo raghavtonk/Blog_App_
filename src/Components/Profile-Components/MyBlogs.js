@@ -42,23 +42,25 @@ export default function MyBlogs() {
   }
 
   async function handleDeleteMyBlog(event) {
-    try {
-      const resData = await sendBlogRequest({
-        url: "https://blog-app-backend-huph.onrender.com/blog/delete-blog",
-        config: {
-          method: "POST",
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
+    if(window.confirm('Are you sure you want to delete this blog?') === true){
+      try {
+        const resData = await sendBlogRequest({
+          url: "https://blog-app-backend-huph.onrender.com/blog/delete-blog",
+          config: {
+            method: "POST",
+            credentials: "include",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ blogId: event.target.id }),
           },
-          body: JSON.stringify({ blogId: event.target.id }),
-        },
-      });
-      if (resData.status == 200) {
-        dispatch(blogsDataAction.deleteMyBlog(event.target.id));
+        });
+        if (resData.status == 200) {
+          dispatch(blogsDataAction.deleteMyBlog(event.target.id));
+        }
+      } catch (error) {
+        console.log("Delete Blog promise fail", error);
       }
-    } catch (error) {
-      console.log("Delete Blog promise fail", error);
     }
   }
 

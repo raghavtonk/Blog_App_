@@ -14,7 +14,7 @@
 .profile-section-myBlog {
     display: flex;
     width: 80vw;
-    justify-content: left;
+    justify-content:space-between;
     margin: 20px 0;
     padding: 20px;
     background-color: var(--darkblack);
@@ -42,13 +42,13 @@
     margin-left: 1rem;
 }
 
-.profile-info-myBlog h1 {
+.profile-info-myBlog  h1 {
     
     font-size: 24px;
     font-weight: bold;
 }
 
-.profile-info-myBlog p {
+.profile-info-myBlog  p {
     margin-top: 5px;
     font-size: 14px;
     color: var(--lightGrey);
@@ -64,4 +64,16 @@
     font-size: 18px;
     color: var(--lightGrey);
     margin-top: 20px;
+}
+.profile-left{
+    display: flex;
+}
+.deletedBlogbtn{
+    width: fit-content;
+    height: 30px;
+    padding: 0.5rem;
+    text-align: center;
+    margin-top: 6.5rem;
+    margin-right: 2rem;
+    color: var(--blue);
 }

@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./Routes/LandindPage";
 import CreatePostPage from "./Routes/CreatePostPage";
 import ProfilePage from "./Routes/ProfilePage";
+import DeletedBlogPage from "./Routes/DeletedBlogPage";
 function App() {
   return (
     <ModeSwitchContextProvider>
@@ -16,6 +17,7 @@ function App() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/create-post" element={<CreatePostPage />} />
               <Route path="/profile/:id" element={<ProfilePage/>} />
+              <Route path="/deleted-blogs" element={<DeletedBlogPage/>}/>
             </Routes>
           </BrowserRouter>
           <ToastContainer />

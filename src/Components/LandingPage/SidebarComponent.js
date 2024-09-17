@@ -3,6 +3,7 @@ import sendBlogRequest from "../../Funtions/blogFetchFunction";
 import { useSelector } from "react-redux";
 import followUserState from "../../Funtions/followUserState";
 import { toast } from "react-toastify";
+import Loader from "../Common-Components/Loader/Loader";
 
 const Getconfig = {
   method: "GET",
@@ -10,6 +11,7 @@ const Getconfig = {
 };
 
 export default function Sidebar() {
+  const [loadingUserId, setLoadingUserId] = useState(null);
   const [allUsers, setAllUsers] = useState(null);
   const isLogin = useSelector((state) => state.usersData.isLogin);
   const [followingData, setFollowingData] = useState([]);
@@ -48,6 +50,8 @@ export default function Sidebar() {
       });
       return;
     }
+    const userId = event.target.id;
+    setLoadingUserId(userId);
     try {
       const resData = await followUserState({
         url: "https://blog-app-backend-huph.onrender.com/follow/follow-user",
@@ -72,6 +76,7 @@ export default function Sidebar() {
     } catch (error) {
       console.log("failed in follow user", error);
     }
+    setLoadingUserId(null);
   }
   async function handleUnfollowbtn(event) {
     if (!isLogin) {
@@ -81,6 +86,8 @@ export default function Sidebar() {
       });
       return;
     }
+    const userId = event.target.id;
+    setLoadingUserId(userId);
     try {
       const resData = await followUserState({
         url: "https://blog-app-backend-huph.onrender.com/follow//unfollow-user",
@@ -105,13 +112,15 @@ export default function Sidebar() {
     } catch (error) {
       console.log("failed in unfollow user", error);
     }
+    setLoadingUserId(null);
   }
   const isUserFollowed = (userId) =>
     followingData?.some((follow) => follow._id === userId);
   return (
     <aside className="sidebar">
-      <div className="sidebar-title">New on LOOP</div>
+      <div className="sidebar-title">New on InspireLink</div>
       <hr />
+
       <div className="user-list">
         {allUsers &&
           allUsers.map((item) => (
@@ -127,7 +136,7 @@ export default function Sidebar() {
                   id={item._id}
                   onClick={handleUnfollowbtn}
                 >
-                  Unfollow
+                  {loadingUserId === item._id ? <Loader /> : "Unfollow"}
                 </button>
               ) : (
                 <button
@@ -135,7 +144,7 @@ export default function Sidebar() {
                   id={item._id}
                   onClick={handleFollowbtn}
                 >
-                  Follow
+                  {loadingUserId === item._id ? <Loader /> : "Follow"}
                 </button>
               )}
             </div>

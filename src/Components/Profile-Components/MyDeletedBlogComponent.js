@@ -4,8 +4,9 @@ import "./ProfileComponent.css";
 import { useSelector } from "react-redux";
 import followUserState from "../../Funtions/followUserState";
 import { Link } from "react-router-dom";
+import MyDeletedBlogs from "./MyDeletedBlog";
 
-export default function Profile() {
+export default function MyDeletedBlogComponent() {
   const { isLogin, loginUserData } = useSelector((state) => state.usersData);
   const [totalFollowerSum, setTotalFollowerSum] = useState(0);
   const [totalFollowingSum, setTotalFollowingSum] = useState(0);
@@ -65,12 +66,11 @@ export default function Profile() {
                   </p>
                 </div>
               </div>
-              <Link to='/deleted-blogs' className="deletedBlogbtn text-link text-button">Deleted Blog</Link>
             </div>
 
             <hr className="hr-myblog" />
             <div className="posts-section">
-              <MyBlogs />
+              <MyDeletedBlogs />
             </div>
           </div>
         )}
